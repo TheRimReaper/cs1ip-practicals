@@ -12,8 +12,14 @@ public class CW1P2 {
         String flavour = input.next();
     
 
+        if (!flavour.equals("s") || !flavour.equals("v") || !flavour.equals("c")) {
+            System.out.println("We don't have that flavour.");
+            System.exit(0);
+        }
+
         System.out.println("How many scoops would you like?");
         int scoopsNum = input.nextInt();
+
        
         if (flavour.equals("s")) {
             if (0 < scoopsNum && scoopsNum <= 3 ) {
@@ -54,9 +60,9 @@ public class CW1P2 {
             if (scoopsNum > 3){
                 System.out.println("That's too many scoops to fit in a cone.");
             }
-        }else {
-            System.out.println("We dont have that flavour.");
         }
+      
+    
     }
        
 }
