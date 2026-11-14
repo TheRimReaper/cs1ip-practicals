@@ -1,7 +1,7 @@
 public class CW1P3 {
-    public static void display(int n) {
-         static String ssd(int d, int n) {
-            switch ((d*10)+n) {
+
+    static String ssd(int d, int n) {
+                switch ((d*10)+n) {
                 case 1: case 5: case 21: case 23: case 25: case 31: case 33: case
                 35:
                 case 43: case 51: case 53: case 55: case 61: case 63: case 65: case
@@ -17,19 +17,26 @@ public class CW1P3 {
                 case 2: case 4: case 42: case 64: case 82: case 84: case 92:
                 return "| | ";
                 default: return " ";
+                }
             }
-         }
-         static void display(int n) {
-            for (int line = 1; line <= 5; line++) {
-                String row = "";
-                int m = n;
-                do {
-                int digit = m % 10;
-                row = ssd(digit, line) + row;
-                m = m / 10;
+            static void display(int n) {
+                for (int line = 1; line <= 5; line++) {
+                    String row = "";
+                    int m = n;
+                    do {
+                int digit = m % 10;            // right-most digit
+                row = ssd(digit, line) + row;  // prepend it
+                m = m / 10;                    // chop it off
             } while (m > 0);
-        System.out.println(row);
-    }
-    }
-}
-}
+            System.out.println(row);
+        }
+    }   // <- display ends
+}     
+    
+    
+            
+
+
+            
+        
+      
