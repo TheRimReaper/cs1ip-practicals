@@ -11,10 +11,19 @@ public class CW1P4 {
         System.out.println("How many values are you adding?");
         int NumCount = input.nextInt();
         
-        
+    
+       
         int count = NumCount;
 
         int[] Plateau = new int[count];
+
+        if (Plateau.length == 0) {
+            System.out.println("0");
+            return;
+        }if (Plateau.length < 4) {
+            System.out.println("0");
+            return;
+        }
 
         int i = 0;
         //Making Array as big as user wants
@@ -27,7 +36,8 @@ public class CW1P4 {
         input.close();
 
         int j = 0;
-       
+
+    
       
 
         Arrays.sort(Plateau);
