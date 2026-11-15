@@ -24,19 +24,24 @@ public class CW1P4 {
             i = i + 1;
         }
         
+        input.close();
 
         int j = 0;
-        
+       
+      
 
-        while (j < count){
+        Arrays.sort(Plateau);
+
+        while (j < count) {
             int amount = Plateau[j];
-            while (j < count && Plateau[j] == amount){
-            j = j+1;
-            }
-
-        }
-        System.out.println(amount + ":" + j);
-        input.close();
+            int counter = 0;
+            while (j < count && Plateau[j] == amount) {
+                j = j + 1;
+                counter = counter + 1;
+                }
+                System.out.println(amount + ": " + counter);
+}
+        
         
     
     }
