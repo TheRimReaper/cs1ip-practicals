@@ -12,15 +12,11 @@ public class CW1P2 {
         String flavour = input.next();
     
 
-        if (!flavour.equals("s") || !flavour.equals("v") || !flavour.equals("c")) {
-            System.out.println("We don't have that flavour.");
-            System.exit(0);
-        }
+      
 
         System.out.println("How many scoops would you like?");
         int scoopsNum = input.nextInt();
-
-       
+            
         if (flavour.equals("s")) {
             if (0 < scoopsNum && scoopsNum <= 3 ) {
                 int StrawberryTotal = StrawberryPrice * scoopsNum + ConePrice;
@@ -61,7 +57,9 @@ public class CW1P2 {
                 System.out.println("That's too many scoops to fit in a cone.");
             }
         }
-      
+        if (!flavour.equals("s") && !flavour.equals("c") && !flavour.equals("v")) {
+            System.out.println("Sorry, we don't have that flavour.");
+        }
     
     }
        
