@@ -35,24 +35,31 @@ public class CW1P4 {
         
         input.close();
 
-        int j = 0;
-
-    
-      
-
-        Arrays.sort(Plateau);
-        //Counter loops when there is the same element in a row, then prints, then resets for the next different element.
-        while (j < count) {
-            int amount = Plateau[j];
-            int counter = 0;
-            while (j < count && Plateau[j] == amount) {
-                j = j + 1;
-                counter = counter + 1;
-                }
-                System.out.println(amount + ": " + counter);
-}
+       
         
         
     
+  
     }
+
+    static int longestPlateau(int[] terrain) {
+    int j = 0;
+    int longest = 0;
+
+    Arrays.sort(terrain);
+    //The counter loops when there is the same element in a row, then prints, then resets for the next different element.
+    while (j < terrain.length) {
+        int amount = terrain[j];
+        int counter = 0;
+        while (j < terrain.length && terrain[j] == amount) {
+            j = j + 1;
+            counter = counter + 1;
+        }
+        System.out.println(amount + ": " + counter);
+        if (counter > longest) {
+            longest = counter;
+        }
+    }
+    return longest;
+}
 }
