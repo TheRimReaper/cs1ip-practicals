@@ -1,42 +1,42 @@
+import java.util.Scanner;
+
 public class CW1P3 {
 
-    static String ssd(int d, int n) {
-                switch ((d*10)+n) {
-                case 1: case 5: case 21: case 23: case 25: case 31: case 33: case
-                35:
-                case 43: case 51: case 53: case 55: case 61: case 63: case 65: case
-                71:
-                case 81: case 83: case 85: case 91: case 93: case 95:
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a number: ");
+        int n = input.nextInt();
+        display(n);
+    }
+
+    static void display(int n) {
+    for (int line = 1; line <= 5; line++) {
+        String row = "";
+        int m = n;  // keep n same for 
+        do {
+            row = ssd(m % 10, line) + row; // Reads rightmost digit of m
+            m = m / 10;                    
+        } while (m > 0); //// drop the right-most digit,then process the next digit to the left
+        System.out.println(row);
+    }
+}
+ static String ssd(int d, int n) {
+        switch ((d * 10) + n) {
+            case 1: case 5: case 21: case 23: case 25: case 31: case 33: case 35:
+            case 43: case 51: case 53: case 55: case 61: case 63: case 65: case 71:
+            case 81: case 83: case 85: case 91: case 93: case 95:
                 return " -- ";
-                case 24: case 52: case 62:
-                return "| ";
-                case 12: case 14: case 22: case 32: case 34: case 44: case 54: case
-                72:
-                case 74: case 94:
-                return " | ";
-                case 2: case 4: case 42: case 64: case 82: case 84: case 92:
-                return "| | ";
-                default: return " ";
-                }
-            }
-            static void display(int n) {
-                for (int line = 1; line <= 5; line++) {
-                    String row = "";
-                    int m = n;
-                    do {
-                int digit = m % 10;            // right-most digit
-                row = ssd(digit, line) + row;  // prepend it
-                m = m / 10;                    // chop it off
-            } while (m > 0);
-            System.out.println(row);
+            case 24: case 52: case 62:
+                return "|   ";
+            case 12: case 14: case 22: case 32: case 34: case 44: case 54: case 72:
+            case 74: case 94:
+                return "   |";
+            case 2: case 4: case 42: case 64: case 82: case 84: case 92:
+                return "|  |";
+            default:
+                return "    ";
         }
-    }   // <- display ends
-}     
-    
-    
-            
+    }
 
-
-            
-        
-      
+}
