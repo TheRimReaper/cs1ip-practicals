@@ -31,7 +31,7 @@ public class CW1P4 {
       
 
         Arrays.sort(Plateau);
-
+        //Counter loops when there is the same element in a row, then prints, then resets for the next different element.
         while (j < count) {
             int amount = Plateau[j];
             int counter = 0;
