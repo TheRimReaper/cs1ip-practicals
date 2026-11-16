@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class CW1P6{
     public static void main(String[] args){
@@ -9,19 +8,23 @@ public class CW1P6{
         
 
         System.out.println("How many grades are there for this module?");
-        int m = input.nextInt();
+        int n = input.nextInt();
 
         System.out.println("How many modules are there?");
-        int n = input.nextInt();
+        int m = input.nextInt();
 
         int[][] MatrixGrade = new int[m][n];
 
         for (int i = 0; i < m; i++) {
-            System.out.println("Enter the " + n + " grades for student :");
+            
+            
             for (int j = 0; j < n; j++) {
+                System.out.println("Enter the " + n + " grades for student :");
                 MatrixGrade[i][j] = input.nextInt();
+            }
+            j = 0;
         }
-        }
+        
     
         
 
